@@ -5,7 +5,15 @@
     </head>
 
     <body>
-        <h1>Your Secret Number is <%= @random_number %></h1>
+        <h1>Guess the Secret Number!</h1>
+
+
+        <form>
+          <input type="text", name="guess"/>
+          <input type='submit', value = "GUESS"/>
+        </form>
+
+        <h2><%= @message %></h2>
     </body>
 
 </html>
