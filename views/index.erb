@@ -7,6 +7,8 @@
     <body>
 
         <h1>Guess the Secret Number!</h1>
+        <h3>Secret number <%= @random_number %></h3>
+        <h3>Guesses remaining <%= @remaining %></h3>
 
         <form>
           <input type="text", name="guess"/>
@@ -14,14 +16,21 @@
         </form>
 
         <% if @high_guess %>
-            <style>body {background-color: red</style>
+            <style>body {background-color: red}</style>
             <h2><%= @high_guess %></h2>
+
         <% elsif @low_guess %>
-            <style>body { background-color: deepskyblue</style>
+            <style>body { background-color: deepskyblue}</style>
             <h2><%= @low_guess %></h2>
-        <% else @correct_guess %>
-            <style>body { background-color: green</style>
+
+        <% elsif @correct_guess %>
+            <style>body { background-color: green}</style>
             <h2><%= @correct_guess %></h2>
+
+        <% else  @out_of_guesses  %>
+            <style>body {background-color: purple;}</style>
+            <h2>@out_of_guesses</h2>
+
         <% end %>
     </body>
 
