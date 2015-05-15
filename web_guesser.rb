@@ -5,7 +5,6 @@ require 'sinatra/reloader' if development?
 
 get '/' do
   @random_number = @@initial_number
-  @remaining = @@guesses_remaining
   @guess = params["guess"].to_i
   @high_guess = high_guess
   @low_guess = low_guess
@@ -40,6 +39,13 @@ def correct_guess
   if @guess == @random_number
     @@guesses_remaining = 5
     "Well Played! New Number Generated! Guess Again"
+  end
+end
+
+def out_of_guesses
+  if @@guesses_remaining == 0
+    "Out of guesses!"
+
   end
 end
 
