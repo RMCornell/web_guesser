@@ -6,18 +6,29 @@ rand = rand(10)
 get '/' do
   @random_number = rand
   @guess = params["guess"].to_i
-  @message = guess_checker
+  @high_guess = high_guess
+  @low_guess = low_guess
+  @correct_guess = correct_guess
   erb :index
 end
 
-def guess_checker
+def high_guess
   if @guess > @random_number
     "Your guess of #{@guess} was too high!"
-  elsif @guess < @random_number
+  end
+end
+
+def low_guess
+  if @guess < @random_number
     "Your guess of #{@guess} was too low!"
-  else @guess == @random_number
+  end
+end
+
+def correct_guess
+  if @guess == @random_number
     "Well Played!"
   end
 end
+
 
 
