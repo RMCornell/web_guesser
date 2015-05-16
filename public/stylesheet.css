@@ -1,0 +1,21 @@
+h1 {
+    background-color: aqua;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    vertical-align: middle;
+    padding: 2px;
+    width: 100%
+}
+
+form {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    text-align: center;
+}
+
+#responses {
+    text-align: center;
+}
+

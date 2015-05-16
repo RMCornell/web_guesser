@@ -14,12 +14,6 @@ get '/' do
 end
 
 @@guesses_remaining = 5
-def out_of_guesses
-  if @remaining == 1
-    @@guesses_remaining = 0
-    "You're out of Guesses. New Number Generated. Guess Again"
-  end
-end
 
 def high_guess
   if @guess > @random_number
@@ -44,10 +38,11 @@ end
 
 def out_of_guesses
   if @@guesses_remaining == 0
-    "Out of guesses!"
-
+    "Out of Guesses!"
   end
 end
+
+
 
 
 

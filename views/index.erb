@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="stylesheet.css"/>
         <title>WebGuesser</title>
     </head>
 
@@ -15,23 +16,25 @@
           <input type='submit', value = "GUESS"/>
         </form>
 
-        <% if @high_guess %>
-            <style>body {background-color: red}</style>
-            <h2><%= @high_guess %></h2>
+        <div id="responses">
+            <% if @high_guess %>
+                <style>#responses {background-color: red}</style>
+                <h2><%= @high_guess %></h2>
 
-        <% elsif @low_guess %>
-            <style>body { background-color: deepskyblue}</style>
-            <h2><%= @low_guess %></h2>
+            <% elsif @low_guess %>
+                <style>#responses { background-color: deepskyblue}</style>
+                <h2><%= @low_guess %></h2>
 
-        <% elsif @correct_guess %>
-            <style>body { background-color: green}</style>
-            <h2><%= @correct_guess %></h2>
+            <% elsif @correct_guess %>
+                <style>#responses { background-color: green}</style>
+                <h2><%= @correct_guess %></h2>
 
-        <% else  @out_of_guesses  %>
-            <style>body {background-color: purple;}</style>
-            <h2>@out_of_guesses</h2>
+            <% else  @out_of_guesses  %>
+                <style>#responses {background-color: purple;}</style>
+                <h2>@out_of_guesses</h2>
 
-        <% end %>
+            <% end %>
+        </div>
     </body>
 
 </html>
